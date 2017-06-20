@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        body {
+            font-family: helvetica, sans-serif, arial;
+        }
+        .container {
+            width: 800px;
+            margin: 70px auto;
+        }
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted #fd5722;
+            margin: 0px;
+            padding: 5px 0px;
+        }
+        .tooltip .tooltip-top {
+            visibility: hidden;
+            width: 120px;
+            background-color: #fd5722;
+            color: #ffffff;
+            text-align: center;
+            border-radius: 3px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .tooltip:hover .tooltip-top {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip:focus .tooltip-top {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip .tooltip-top:after {
+            content: " ";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #fd5722 transparent transparent transparent;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    This is an awesome
+    <a class="tooltip" href="#">
+        <span class="text">tooltip</span>
+        <span class="tooltip-top">It's so cool</span>
+    </a>
+
+</div>
+
+</body>
+</html>
